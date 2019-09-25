@@ -6,7 +6,6 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 public class Browser {
     private static WebDriver driver;
-    public BrowserType browserType;
 
     public static WebDriver setUpBwoserType(){
 

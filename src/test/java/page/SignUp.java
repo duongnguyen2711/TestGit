@@ -1,5 +1,7 @@
 package page;
 
+import base.DriverContext;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -7,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SignUp extends BasePage{
 
-    private WebDriverWait wait;
+    private WebDriverWait wait = new WebDriverWait(DriverContext.getDriver(), 5);
 
     @FindBy(id = "firstName")
     public WebElement txtFirstName;
@@ -21,7 +23,7 @@ public class SignUp extends BasePage{
     @FindBy(xpath = ".//div[@name='birthMonth']")
     public WebElement drpMonth;
 
-    @FindBy(xpath = ".//div[@name='birthDay ']")
+    @FindBy(xpath = ".//div[@name='birthDay']")
     public WebElement drpDay;
 
     @FindBy(xpath = ".//div[@name='birthYear']")
@@ -39,45 +41,75 @@ public class SignUp extends BasePage{
     @FindBy(xpath = ".//h1[@class='step-title']/span[1]")
     public WebElement txtStepTitle;
 
+    @FindBy(id = "ui-select-choices-1")
+    public WebElement listDay;
+
+    @FindBy(id = "ui-select-choices-2")
+    public WebElement listYear;
+
+    @FindBy(id = "ui-select-choices-0")
+    public WebElement listMonth;
+
+    @FindBy(id = "ui-select-choices-3")
+    public WebElement listGender;
+
+    private void selectYear(String year){
+        WebElement newYearList = listYear.findElement(By.xpath("//div[text()='"+year+"']"));
+        wait.until(ExpectedConditions.visibilityOf(newYearList));
+        newYearList.click();
+    }
+
+    private void selectDay(String day){
+        WebElement newDayList = listDay.findElement(By.xpath("//div[text()='"+day+"']"));
+        wait.until(ExpectedConditions.visibilityOf(newDayList));
+        newDayList.click();
+    }
+
+    private void selectMonth(String month){
+        WebElement newMonthList = listMonth.findElement(By.xpath("//div[text()='"+month+"']"));
+        wait.until(ExpectedConditions.visibilityOf(newMonthList));
+        newMonthList.click();
+    }
+
+
+    private void selectGender(String gender){
+        WebElement newGenderList = listGender.findElement(By.xpath("//div[text()='"+gender+"']"));
+        wait.until(ExpectedConditions.visibilityOf(newGenderList));
+        newGenderList.click();
+
+    }
+
     public void fillUpAllFields(String firstName, String lastName, String email, String day, String month, String year, String gender){
 
-        wait.until(ExpectedConditions.invisibilityOf(txtFirstName));
+        wait.until(ExpectedConditions.visibilityOf(txtFirstName));
 
         txtFirstName.sendKeys(firstName);
         txtLastName.sendKeys(lastName);
         txtEmail.sendKeys(email);
 
         drpGender.click();
-        wait.until(ExpectedConditions.elementToBeClickable(drpGender));
-        drpGender.sendKeys(gender);
+        selectGender(gender);
 
         drpDay.click();
-        wait.until(ExpectedConditions.elementToBeClickable(drpDay));
-        drpDay.sendKeys(day);
+        selectDay(day);
 
         drpMonth.click();
-        wait.until(ExpectedConditions.elementToBeClickable(drpMonth));
-        drpMonth.sendKeys(month);
+        selectMonth(month);
 
         drpYear.click();
-        wait.until(ExpectedConditions.elementToBeClickable(drpYear));
-        drpYear.sendKeys(year);
+        selectYear(year);
 
         btnNext.click();
     }
 
     public boolean emailErrorDisplay(){
         String invalidEmailError = "Enter valid email";
-        wait.until(ExpectedConditions.invisibilityOf(txtEmail));
+        wait.until(ExpectedConditions.visibilityOf(txtEmail));
         if (txtEmail.getText().equals(invalidEmailError)){
             return true;
         } else {
             return false;
         }
-    }
-
-    public void cleanUpTest(){
-        driver.quit();
     }
 
 }

@@ -1,7 +1,6 @@
 package base;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 public class DriverContext {
     private static WebDriver driver;
