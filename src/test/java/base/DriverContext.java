@@ -9,4 +9,9 @@ public class DriverContext {
     public static WebDriver getDriver(){
         return driver;
     }
+
+    public static void setUpDriver(){
+        driver = Browser.setUpBwoserType();
+    }
+
 }

@@ -1,25 +1,20 @@
 package base;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 public class Browser {
     private static WebDriver driver;
     public BrowserType browserType;
 
-    public static WebDriver setUpBwoserType(BrowserType browserType){
-        switch (browserType){
-            case IE:
-                System.setProperty("webdriver.ie.driver", "C:\\MavenDemoTest\\driver");
-                driver = new InternetExplorerDriver();
+    public static WebDriver setUpBwoserType(){
 
-            case Chrome:
-                System.setProperty("webdriver.ie.driver", "C:\\Working\\SourceCode\\Utilisoft\\automation-utilisoft\\data\\webdriver");
-                driver = new InternetExplorerDriver();
+        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/data/driver" + "/chromedriver.exe");
+        ChromeOptions options = new ChromeOptions();
+        options.setCapability("acceptSslCerts", true);
+        driver = new ChromeDriver();
 
-            case Firefox:
-                System.setProperty("webdriver.ie.driver", "C:\\Working\\SourceCode\\Utilisoft\\automation-utilisoft\\data\\webdriver");
-                driver = new InternetExplorerDriver();
-        }
+        return driver;
     }
 }
