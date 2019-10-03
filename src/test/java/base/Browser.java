@@ -9,7 +9,7 @@ public class Browser {
 
     public static WebDriver setUpBwoserType(){
 
-        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/data/driver" + "/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/test/java/data/driver" + "/chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         options.setCapability("acceptSslCerts", true);
         driver = new ChromeDriver();

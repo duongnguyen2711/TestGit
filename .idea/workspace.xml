@@ -2,16 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e7810258-4234-42dc-99f9-f7464223ad20" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/SignUp.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/qa/tests/DemoTest1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/utility/JsonReader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/driver/chromedriver.exe" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/data/driver/chromedriver.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/base/Browser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/base/Browser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/base/BrowserType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/base/DriverContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/base/DriverContext.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/qa/tests/DemoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/qa/tests/DemoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/page/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/page/BasePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/page/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/page/LoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/page/SignUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/page/SignUp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/base/Browser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/base/Browser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/base/BrowserType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/base/DriverContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/base/DriverContext.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/qa/tests/DemoTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/qa/tests/DemoTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/page/BasePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/page/BasePage.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/page/LoginPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/page/LoginPage.class" afterDir="false" />
@@ -65,6 +67,7 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1569421125507" />
@@ -75,12 +78,15 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Working\SourceCode\TestGit\data" />
+      <recent name="C:\Working\SourceCode\TestGit\src\test\java\data" />
       <recent name="C:\MavenDemoTest" />
       <recent name="C:\MavenDemoTest\src" />
       <recent name="C:\MavenDemoTest\src\test" />
@@ -181,7 +187,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1569315384518</updated>
-      <workItem from="1569422345599" duration="8886000" />
+      <workItem from="1569422345599" duration="9722000" />
+      <workItem from="1570030581026" duration="449000" />
+      <workItem from="1570031378780" duration="1201000" />
+      <workItem from="1570107187122" duration="12316000" />
     </task>
     <servers />
   </component>
@@ -193,11 +202,39 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/qa/tests/DemoTest.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/qa/tests/DemoTest.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/utility/JsonReader.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/utility/JsonReader.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="masterDetails">
     <states>

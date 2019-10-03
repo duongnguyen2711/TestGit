@@ -1,10 +1,11 @@
 package com.qa.tests;
 
-
 import base.DriverContext;
 import org.testng.Assert;
-
-import org.testng.annotations.*;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
 import page.LoginPage;
 import page.SignUp;
 import utility.JsonReader;
@@ -12,8 +13,7 @@ import utility.JsonReader;
 import java.io.FileNotFoundException;
 import java.util.Random;
 
-public class DemoTest {
-
+public class DemoTest1 {
     @BeforeMethod
     public void openBrowser(){
         DriverContext.setUpDriver();
@@ -26,21 +26,22 @@ public class DemoTest {
         DriverContext.getDriver().quit();
     }
 
-    @DataProvider(name = "testData")
+    @DataProvider(name = "dataProvider")
     public Object[][] passData() throws FileNotFoundException {
-        return JsonReader.getData(System.getProperty("user.dir") + "/data/SignUp.json", "SignUp Successful", 2, 7);
+        return JsonReader.getData("user.dir" + "/data/SignUp.json", "Sign Up Successful", 2, 7);
     }
 
-    @Test (dataProvider = "testData")
-    public void SignUpSuccess(String firstName, String lastName, String email, String dobDay, String dobMonth, String dobYear, String gender){
+    @Test
+    public void SignUpUnsuccess() {
         LoginPage loginPage = new LoginPage();
         loginPage.lnkSignUp.click();
 
         SignUp signUp = new SignUp();
-        //int num = new Random().nextInt(5000);
-        signUp.fillUpAllFields(firstName, lastName, email, dobDay, dobMonth, dobYear, gender);
-        String step2 = signUp.txtStepTitle.getText();
-        Assert.assertEquals(step2, "Step 2:");
+        int num = new Random().nextInt(5000);
+        signUp.fillUpAllFields("Duong", "Nguyen", "duong.nguyen",
+                "27", "November", "1992", "Male");
+        String emailError = signUp.txtError.getText();
+        Assert.assertEquals(emailError, "Enter valid email");
     }
 
 }

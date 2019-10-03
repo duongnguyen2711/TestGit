@@ -1,0 +1,22 @@
+{
+  "SignUp Successful": [
+    {
+      "FirstName": "Duong",
+      "LastName": "Nguyen",
+      "Email": "duongnguyen01@mailinator.com",
+      "DOBDay": "27",
+      "DOBMonth": "November",
+      "DOBYear": "1992",
+      "Gender": "Male"
+    },
+    {
+      "FirstName": "Duong",
+      "LastName": "Nguyen",
+      "Email": "duongnguyen02@mailinator.com",
+      "DOBDay": "27",
+      "DOBMonth": "November",
+      "DOBYear": "1992",
+      "Gender": "Male"
+    }
+  ]
+}
